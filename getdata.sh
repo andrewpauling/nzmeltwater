@@ -1,6 +1,8 @@
 #!/bin/bash
 
+workdir=$(pwd)
 monvars=(tas tos zos uas vas pr)
+dayvars=(tasmax sfcWind)
 
 experiments=(historical ssp245 ssp585)
 
@@ -30,6 +32,33 @@ for exp in ${experiments[@]}; do
         else
             echo "    Directory $var already exists"
         fi
+
+	    cd $vdir
+
+	    . ${workdir}/nzmeltwater/wget-${var}-${exp}.sh -s
+
+	    cd $workdir	
     done
+
+    for var in ${dayvars[@]}; do
+        echo "    $var"
+
+        vdir=${edir}/day/${var}
+
+        if [[ ! -d  "$vdir" ]]; then
+            echo "    Directory $var not made yet"
+            mkdir -p ${vdir}
+        else
+            echo "    Directory $var already exists"
+        fi
+
+        cd $vdir
+
+	    . ${workdir}/nzmeltwater/wget-${var}-day-${exp}.sh -s
+
+	    cd $workdir	
+    
+    done
+
 done
 
