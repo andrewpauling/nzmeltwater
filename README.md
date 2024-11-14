@@ -1,12 +1,21 @@
 nzmeltwater
 ==============================
-[![Build Status](https://github.com/andrewpauling/nzmeltwater/workflows/Tests/badge.svg)](https://github.com/andrewpauling/nzmeltwater/actions)
-[![codecov](https://codecov.io/gh/andrewpauling/nzmeltwater/branch/main/graph/badge.svg)](https://codecov.io/gh/andrewpauling/nzmeltwater)
-[![License:MIT](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flt-square)](https://opensource.org/licenses/MIT)[![pypi](https://img.shields.io/pypi/v/nzmeltwater.svg)](https://pypi.org/project/nzmeltwater)
-<!-- [![conda-forge](https://img.shields.io/conda/dn/conda-forge/nzmeltwater?label=conda-forge)](https://anaconda.org/conda-forge/nzmeltwater) -->[![Documentation Status](https://readthedocs.org/projects/nzmeltwater/badge/?version=latest)](https://nzmeltwater.readthedocs.io/en/latest/?badge=latest)
+[![License:MIT](https://img.shields.io/badge/License-MIT-lightgray.svg?style=flt-square)](https://opensource.org/licenses/MIT)
 
 
 Code to reproduce results from Pauling et al., 2025 in GRL
+
+To download the necessary data run the getdata.sh script from the command line. Note this will download a large (>50GB) quantity of data.
+
+To setup the conda environment run:
+```
+conda env create -f environment.yml
+```
+then, with the environment activated, run:
+```
+pip install -e .
+```
+This will install the user-created functions in the environment to allow them to be imported by the scripts. All plots in the paper and supporting information can be reproduced using the Jupyter notebooks in the notebooks directory.
 
 --------
 
