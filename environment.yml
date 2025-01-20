@@ -2,6 +2,7 @@ name: nzmeltwater
 channels:
   - conda-forge
 dependencies:
+  - python==3.12
   # Required for full project functionality (dont remove)
   - pytest
   # Examples (remove and add as needed)
@@ -14,3 +15,14 @@ dependencies:
   - netcdf4
   - pandas
   - matplotlib
+  - netcdf4
+  - cftime
+  - cartopy
+  - nc-time-axis
+  - cmocean
+  - xgcm
+  - xesmf==0.8.*
+  - jupyterlab_code_formatter
+  - black
+  - isort
+  - dask-jobqueue
